@@ -1,0 +1,19 @@
+<div id="agevalue"></div>
+<script>
+  
+  var num=prompt("Describe your age:","18");
+  an= Number(num);
+  
+  if (num >= 18) {
+    console.log(an,'is a',typeof(an));
+    //alert('congrat! you can vote,you are '+ an +' now');
+    
+    let age=document.getElementById('agevalue');
+    age.innerHTML='Congrat! you can vote, you are '+an+' now';
+  }else{
+    //alert('fuck you');
+    
+    let age=document.getElementById('agevalue');
+    age.innerHTML='you cannot vote because of your under 18';
+  }
+</script>
