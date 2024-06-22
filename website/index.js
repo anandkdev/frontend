@@ -79,3 +79,43 @@ subcribe.onclick= function(){
     sub.textContent="subcribed"
   }
 }
+
+// SWITCH
+let day=5;
+ switch(day){
+  case 1:
+    console.log("Message recieved");
+    break;
+  case 2:
+    console.log("Not recieved");
+    break;
+  default:
+    console.log("Error")
+ }
+
+ let testscore=91;
+ let grade;
+ switch(true){
+  case testscore>=90:
+    grade="A";
+    break;
+  case testscore>=80:
+    grade="B";
+    break;
+  default:
+    grade="ad";
+ }
+ console.log(grade);
+
+ //String slicing
+const email="anand@gmail.com";
+let firstname = email.slice(0,email.indexOf("@"));
+let balance = email.slice(email.indexOf("@"));
+console.log(firstname);
+console.log(balance);
+
+ //Method chaining
+//  let myName= window.prompt("Wirte whatever...");
+//  myName=myName.trim().charAt(0).toUpperCase() + myName.trim().slice(1).toLowerCase();
+//  console.log(myName);
+
