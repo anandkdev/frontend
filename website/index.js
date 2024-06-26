@@ -119,3 +119,98 @@ console.log(balance);
 //  myName=myName.trim().charAt(0).toUpperCase() + myName.trim().slice(1).toLowerCase();
 //  console.log(myName);
 
+//array
+let fruits=["apple","orange","bannana"];
+console.log(fruits.length);
+fruits.pop();
+fruits.sort();
+fruits.sort().reverse();
+fruits.push("coconut");
+//etc.,
+console.log(fruits[0]);
+console.log(fruits.indexOf("apple"));
+let veg=["apple","orange","bannana"];
+for(let i=0; i<veg.length; i++){
+  console.log(veg[i]);
+}
+for(let i=veg.length; i>=0; i--){
+  console.log(veg[i]);
+}
+for(let fruit of veg){
+  console.log(fruit);
+}
+
+//spread operator
+let og=["apple","orange","bannana"];
+let of=["orange","bannana","apple"];
+let A=[...og,...of, "egg","onion"];
+console.log(A);
+let myNameIs= "Anand";
+let last=[...myNameIs].join("-");
+console.log(last);
+
+//rest parameters
+const fullName=combineStrings("Mr.","Anandakumar","R");
+function combineStrings(...strings){
+  return strings.join(" ");
+}
+console.log(fullName);
+
+// forEach
+
+let eater=["apple","orange","bannana"];
+
+eater.forEach(capitalize);
+eater.forEach(display);
+function capitalize(element,index,array){
+  array[index]=element.charAt(0).toUpperCase()+element.slice(1);
+}
+function display(element){
+  console.log(element);
+}
+
+// .map
+const date=["2024-02-01","2025-05-12","2026-06-23"];
+const formateDates=date.map(formatDate);
+console.log(formateDates);
+function formatDate(element){
+  const part=element.split("-");
+  return`${part[1]}/${part[2]}/${part[0]}`;
+}
+
+// .reduce()
+const mark=[0,80,20,51,20,23];
+const maximum=mark.reduce(findMax);
+console.log(maximum);
+function findMax(accumulator, element){
+  return Math.max(accumulator, element);
+}
+
+// function expressions
+const numberS=[1,2,3,4,5,6,7,8];
+const square=numberS.map(function(element){
+  return Math.pow(element,2);
+})
+const cube=numberS.map(function(element){
+  return Math.pow(element,3);
+})
+const eveNum=numberS.filter(function(element){
+  return element%2===0;
+})
+const oddNum=numberS.filter(function(element){
+  return element%2!==0;
+})
+const toTal=numberS.reduce(function(accumulator,element){
+  return accumulator+element;
+})
+console.log(toTal);
+
+// arrow function
+const numbeR=[1,2,3,4,5,6,7,8];
+
+const sQuare=numbeR.map((element)=>Math.pow(element,2));
+const cUbe=numbeR.map((element)=>Math.pow(element,3));
+const evenUm=numbeR.filter((element)=>element%2===0);
+const oDdnum=numbeR.filter((element)=>element%2!==0);
+const tOtal=numbeR.reduce((accumulator,element)=>accumulator+element);
+console.log(oDdnum);
