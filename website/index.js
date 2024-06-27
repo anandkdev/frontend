@@ -133,7 +133,10 @@ let veg=["apple","orange","bannana"];
 for(let i=0; i<veg.length; i++){
   console.log(veg[i]);
 }
-for(let i=veg.length; i>=0; i--){
+for(let i=veg.length-1; i>=0; i--){
+  console.log(veg[i]);
+}
+for(let i=0; i>=0; i--){
   console.log(veg[i]);
 }
 for(let fruit of veg){
@@ -214,3 +217,84 @@ const evenUm=numbeR.filter((element)=>element%2===0);
 const oDdnum=numbeR.filter((element)=>element%2!==0);
 const tOtal=numbeR.reduce((accumulator,element)=>accumulator+element);
 console.log(oDdnum);
+
+// object
+const perSon={
+  firstName: "Ananda",
+  lastName: "kumar",
+  age: 25,
+  isEmployeed: false,
+  sayHello: ()=> console.log("Hello"),
+}
+console.log(perSon.firstName);
+perSon.sayHello();
+
+// this
+const perSon1={
+  firstName: "Ananda",
+  lastName: "kumar",
+  age: 25,
+  isEmployeed: false,
+  eat: function(){console.log(`My name is ${this.firstName}${this.lastName}`)},
+  sayHello1: function(){console.log("Hello")},
+  eat1: ()=>console.log(`My name is ${perSon1.firstName}${perSon1.lastName}`),
+  sayHello: ()=>{console.log("Hello")},
+}
+console.log(perSon1.age);
+perSon1.eat();
+perSon1.eat1();
+perSon1.sayHello();
+
+// construtor
+function car(make,model,year,color){
+  this.make=make,
+  this.model=model,
+  this.year=year,
+  this.color=color,
+  this.drive= function(){console.log(`you are driving ${this.model} model`)}
+}
+const car1= new car(1,2,3,4);
+car1.drive();
+
+// class
+class Product{
+  constructor(name,price){
+    this.name=name;
+    this.price=price;
+  }
+  displayProduct(){
+    console.log(`product: ${this.name}`);
+    console.log(`price: ${this.price.toFixed(2)}`);
+  }
+  calTotal(salesTax){
+    return this.price+(this.price*salesTax);
+  }
+}
+const salesTax=0.05;
+const product1= new Product("anand", 100.00);
+product1.displayProduct();
+const totAl= product1.calTotal(salesTax);
+console.log(toTal);
+
+// inheritance
+class Animal{
+  alive=true;
+  eat(){
+    console.log(`This ${this.name} is eating`);
+  }
+  sleep(){
+    console.log(`This ${this.name} is sleeping`);
+  }
+}
+class Fish extends Animal{
+  name="Fish";
+}
+class Rabbit extends Animal{
+  name="rabbit";
+}
+class Hawk extends Animal{
+  name="Hawk";
+}
+const fish= new Fish();
+console.log(fish.alive);
+fish.eat();
