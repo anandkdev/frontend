@@ -294,7 +294,173 @@ class Rabbit extends Animal{
 }
 class Hawk extends Animal{
   name="Hawk";
-}
-const fish= new Fish();
+}const fish= new Fish();
 console.log(fish.alive);
 fish.eat();
+
+// super
+
+class Animal{
+  constructor(name,age){
+    this.name=name;
+    this.age=age;
+  }
+  move(speed){
+    console.log(`The ${this.name} moves at a speed pf ${speed}mph`);
+  }
+  
+}
+class Fish extends Animal{
+  constructor(name,age,swimspeed){
+    super(name,age);
+    this.swimspeed=swimspeed;
+  }
+  swim(){
+    console.log(`The ${this.name} can run`);
+    super.move(this.swimspeed);
+  }
+}
+class Rabbit extends Animal{
+  constructor(name,age,runspeed){
+    super(name,age);
+    this.runspeed=runspeed;
+  }
+  run(){
+    console.log(`The ${this.name} can run`);
+    super.move(this.runspeed);
+  }
+  
+} 
+class Hawk extends Animal{
+  constructor(name,age,flyspeed){
+    super(name,age);
+    this.flyspeed=flyspeed;
+  }
+  fly(){
+    console.log(`The ${this.name} can fly`);
+    super.move(this.flyspeed);
+  }
+}
+
+const fish1= new Rabbit("rabbit",12,25);
+console.log(fish1.runspeed);
+fish1.run();
+
+// setter and getter
+class Person{
+  constructor(firstnAme,lastnAme,agE){
+    this.firstnAme=firstnAme;
+    this.lastnAme=lastnAme;
+    this.agE=agE;
+  }
+  set firstnAme(firstnAme){
+    if(typeof firstnAme==="string" && firstnAme.length>0){
+      return this._firstnAme=firstnAme;
+    }
+    else{
+      console.log('some message');
+    }
+  }
+  set lastnAme(lastnAme){
+    if(typeof lastnAme==="string" && lastnAme.length>0){
+      return this._lastnAme=lastnAme;
+    }
+    else{
+      console.log('some message errro');
+    }
+  }
+  set agE(agE){
+    if(typeof agE=== "number" && agE>=0){
+      return this._agE=agE;
+    }
+    else{
+      console.log('some message 01');
+    }
+  }
+  get firstnAme(){
+    return this._firstnAme;
+  }
+  get lastnAme(){
+    return this._lastnAme;
+  }
+  get agE(){
+    return this._agE;
+  }
+  get fullName(){
+    return this._firstnAme+" "+this._lastnAme;
+  }
+}
+const person= new Person('AD',"DK",2);
+console.log(person.firstnAme);
+console.log(person.lastnAme);
+console.log(person.fullName);
+console.log(person.agE);
+
+// nested object
+class Person{
+  constructor(nAme,agE,...address){
+    this.nAme=nAme;
+    this.agE=agE;
+    this.address=new Address(...address);
+  }
+}
+class Address{
+  constructor(street,city,country){
+    this.street=street;
+    this.city=city;
+    this.country=country;
+  }
+}
+
+const person1= new Person("AD",1,"gandhi Nagar","coimbatore","Tamil Nadu")
+console.log(person.address);
+
+// error handling
+try{
+  const dividend=Number(window.prompt("Enter the dividend: "));
+  const divisor=Number(window.prompt("Enter the divisor: "));
+  if(divisor == 0){
+    console.log("enter valid no. ");
+  }
+  if (isNaN(dividend) || isNaN(divisor)){
+    console.log("values must be a num");
+  }
+}
+catch(error){
+  console.log("something");
+}
+finally{
+  console.log("something crazy");
+}
+
+// eventListener
+/*const mybox = document.getElementById("myBox");
+mybox.addEventListener("click",event =>{
+  event.target.style.backgroundColor="tomato";
+  onclick.target.textContent="OUCH";
+})
+mybox.addEventListener("mouseover",event =>{
+  onclick.target.style.backgroundColor="yellow";
+  onclick.target.textContent="Don't do it";
+})
+mybox.addEventListener("mouseout",event =>{
+  onclick.target.style.backgroundColor="lightgreen";
+  onclick.target.textContent="Click Me";
+})*/
+
+const mybOx = document.getElementById("myBox");
+
+mybOx.addEventListener("click", event => {
+  event.target.style.backgroundColor = "tomato";
+  event.target.textContent = "OUCH";
+});
+
+mybOx.addEventListener("mouseover", event => {
+  event.target.style.backgroundColor = "yellow";
+  event.target.textContent = "Don't do it";
+});
+
+mybOx.addEventListener("mouseout", event => {
+  event.target.style.backgroundColor = "lightgreen";
+  event.target.textContent = "Click Me";
+});
