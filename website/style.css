@@ -1,0 +1,32 @@
+#count{
+  display: block;
+  text-align: center;
+  font-size: 10em;
+  font-family: Helvetica;
+}
+#divBtn{
+  text-align: center;
+}
+.buttons{
+  padding: 10px 20px;
+  font-size: 1.5em;
+  color: white;
+  background-color: hsl(240, 99%, 73%);
+  border-radius: 4px;
+  cursor: pointer;
+  transition:background-color 0.25s;
+}
+.buttons:hover{
+  background-color: hsl(240, 93%, 57%);
+}
+
+#myBox{
+  background-color: lightgreen;
+  width: 300px;
+  height: 300px;
+  font-size: 4.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
