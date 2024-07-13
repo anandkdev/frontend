@@ -43,7 +43,7 @@ Section::after{
   transition: 0.6s;
 }
 .container:hover {
-  transform: rotateY(180deg);
+  transform: rotatex(180deg);
 }
 .container .card{
   position: absolute;
@@ -95,7 +95,7 @@ h5.name{
 .card.back-face {
   border: none;
   padding: 15px 25px 25px 25px;
-  transform: rotateY(180deg);
+  transform: rotatex(180deg);
 }
 .card.back-face h6 {
   font-size: 8px;
